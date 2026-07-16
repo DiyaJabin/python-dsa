@@ -28,6 +28,7 @@ Every single array access would require an extra subtraction, hence starting the
 <li>Searching → O(n)</li>
 
 <h2>Two Pointers</h2>
+<h3>Pattern 1: Opposite ends</h3>
 The problem is to find two elements in the array such that their sum amounts to a particular target for an array which is sorted.
 We use two pointers instead of checking every pair
 <ul>
@@ -38,9 +39,17 @@ We use two pointers instead of checking every pair
 <li>Time Complexity: O(n)</li>
 <li>Space Complexity: O(1)</li>
 
-<h3>When should I use Two Pointers?</h3>
+<h4>When should I use Two Pointers?</h4>
 <ul>
 <li>The array is sorted.</li>
 <li>You need to find a pair or compare elements from both ends.</li>
 <li>You want to reduce an O(n²) solution to O(n).</li>
+
+<h3>Pattern 2: Same direction(Reader+Writer)</h3>
+<ul>
+<li>Reader scans every element</li>
+<li>Writer stores only the required elements</li>
+<li>Used for modifications within an array</li>
+<li>Time Complexity: O(n)</li>
+<li>Space Complexity: O(1)</li>
 
