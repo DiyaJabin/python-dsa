@@ -27,3 +27,20 @@ Every single array access would require an extra subtraction, hence starting the
 <li>Deleting from the front → O(n) (Every element moves)</li>
 <li>Searching → O(n)</li>
 
+<h2>Two Pointers</h2>
+The problem is to find two elements in the array such that their sum amounts to a particular target for an array which is sorted.
+We use two pointers instead of checking every pair
+<ul>
+<li>Left pointer starts from the beginning</li>
+<li>Right pointer starts from the end</li>
+<li>If the current sum is too small, move the left pointer right to increase the sum</li>
+<li>If the current sum is too big, move the right pointer left to decrease the sum</li>
+<li>Time Complexity: O(n)</li>
+<li>Space Complexity: O(1)</li>
+
+<h3>When should I use Two Pointers?</h3>
+<ul>
+<li>The array is sorted.</li>
+<li>You need to find a pair or compare elements from both ends.</li>
+<li>You want to reduce an O(n²) solution to O(n).</li>
+
