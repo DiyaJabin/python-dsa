@@ -53,3 +53,8 @@ We use two pointers instead of checking every pair
 <li>Time Complexity: O(n)</li>
 <li>Space Complexity: O(1)</li>
 
+<h4>Reader-Writer Initialization</h4>
+<ul>
+<li>Start the reader from index 1 only if the first element is guaranteed to be part of the final answer.</li>
+<li>Otherwise, start both reader and writer from index 0 so every element is evaluated.</li>
+</ul>
