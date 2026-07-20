@@ -27,34 +27,49 @@ Every single array access would require an extra subtraction, hence starting the
 <li>Deleting from the front → O(n) (Every element moves)</li>
 <li>Searching → O(n)</li>
 
-<h2>Two Pointers</h2>
-<h3>Pattern 1: Opposite ends</h3>
-The problem is to find two elements in the array such that their sum amounts to a particular target for an array which is sorted.
-We use two pointers instead of checking every pair
+<h2>Pattern Card: Opposite Ends Two Pointers</h2>
 <ul>
-<li>Left pointer starts from the beginning</li>
-<li>Right pointer starts from the end</li>
-<li>If the current sum is too small, move the left pointer right to increase the sum</li>
-<li>If the current sum is too big, move the right pointer left to decrease the sum</li>
-<li>Time Complexity: O(n)</li>
-<li>Space Complexity: O(1)</li>
+<li><b>Purpose:</b> Find pairs or compare values from both ends of a sorted array.</li>
+<li><b>Time Complexity:</b> O(n)</li>
+<li><b>Space Complexity:</b> O(1)</li>
+<li><b>When to use:</b> Sorted arrays, pair problems, reducing O(n²) to O(n).</li>
+<li><b>Examples:</b> Two Sum II, Valid Palindrome, Container With Most Water.</li>
+</ul>
 
-<h4>When should I use Two Pointers?</h4>
+<h2>Pattern Card: Reader-Writer</h2>
 <ul>
-<li>The array is sorted.</li>
-<li>You need to find a pair or compare elements from both ends.</li>
-<li>You want to reduce an O(n²) solution to O(n).</li>
+<li><b>Purpose:</b> Filter or modify an array in-place.</li>
+<li><b>Reader:</b> Scans every element.</li>
+<li><b>Writer:</b> Marks the boundary of the valid portion of the array.</li>
+<li><b>Time Complexity:</b> O(n)</li>
+<li><b>Space Complexity:</b> O(1)</li>
+<li><b>Examples:</b> Remove Duplicates, Move Zeroes, Remove Element.</li>
+</ul>
+<<h3>Initialization</h3>
+<ul>
+<li>If the first element is guaranteed to stay, start the reader from index 1.</li>
+<li>Otherwise, start both pointers from index 0.</li>
+</ul>
+<h3>How do I recognize this pattern?</h3>
+<ul>
+<li>Need to modify an array in-place.</li>
+<li>Need to keep or remove certain elements.</li>
+<li>Need O(1) extra space.</li>
+<li>Each element is processed once.</li>
+</ul>
 
-<h3>Pattern 2: Same direction(Reader+Writer)</h3>
+<h2>Pattern Card: Prefix Sum</h2>
 <ul>
-<li>Reader scans every element</li>
-<li>Writer stores only the required elements</li>
-<li>Used for modifications within an array</li>
-<li>Time Complexity: O(n)</li>
-<li>Space Complexity: O(1)</li>
+<li><b>Purpose:</b> Answer multiple range sum queries efficiently.</li>
+<li><b>Idea:</b> Store cumulative sums.</li>
+<li><b>Construction:</b> O(n)</li>
+<li><b>Range Query:</b> O(1)</li>
+<li><b>Extra Space:</b> O(n)</li>
+<li><b>Examples:</b> Range Sum Query, Pivot Index.</li>
+</ul>
 
-<h4>Reader-Writer Initialization</h4>
+<h3>Formula</h3>
 <ul>
-<li>Start the reader from index 1 only if the first element is guaranteed to be part of the final answer.</li>
-<li>Otherwise, start both reader and writer from index 0 so every element is evaluated.</li>
+<li>If left == 0 → prefix[right]</li>
+<li>Otherwise → prefix[right] - prefix[left-1]</li>
 </ul>
