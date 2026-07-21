@@ -1,0 +1,20 @@
+#Time complexity: O(n) for building prefix_array and O(n) for the checking part; tootal=O(n)
+#Space complexity: O(n)
+class Solution:
+    def pivotIndex(self, nums: List[int]) -> int:
+        prefix_array=[]
+        current_sum=0
+        for num in nums:
+            current_sum+=num
+            prefix_array.append(current_sum)
+
+        pivot_index=0
+        found=False
+        for i in range(len(nums)):
+            left_sum=0 if i==0 else prefix_array[i-1]
+            right_sum=0 if i==len(nums)-1 else prefix_array[-1]-prefix_array[i]
+            if left_sum==right_sum:
+                pivot_index=i
+                found=True
+                break
+        return -1 if not found else pivot_index

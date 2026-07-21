@@ -73,3 +73,16 @@ Every single array access would require an extra subtraction, hence starting the
 <li>If left == 0 → prefix[right]</li>
 <li>Otherwise → prefix[right] - prefix[left-1]</li>
 </ul>
+
+<h3>How do I recognize Prefix Sum?</h3>
+<ul>
+<li>You need sums over different ranges of the same array.</li>
+<li>Repeated summation would result in O(n²).</li>
+<li>The array does not change between queries.</li>
+<li>You can preprocess once and answer many queries quickly.</li>
+</ul>
+
+<h3>Preprocessing</h3>
+<p>
+Sometimes it's worth spending O(n) time once so that future operations become O(1).
+</p>
