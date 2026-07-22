@@ -86,3 +86,21 @@ Every single array access would require an extra subtraction, hence starting the
 <p>
 Sometimes it's worth spending O(n) time once so that future operations become O(1).
 </p>
+
+<h2>Pattern Card: Sliding Window (Fixed Size)</h2>
+<ul>
+<li><b>Purpose:</b> Process every subarray of a fixed size efficiently.</li>
+<li><b>Main Idea:</b> Update the current window instead of recalculating it.</li>
+<li><b>Window Movement:</b> Remove one element leaving the window and add the new element entering.</li>
+<li><b>Time Complexity:</b> O(n)</li>
+<li><b>Space Complexity:</b> O(1)</li>
+<li><b>Examples:</b> Maximum Average Subarray I, Maximum Sum Subarray of Size K.</li>
+</ul>
+
+<h3>How do I recognize it?</h3>
+<ul>
+<li>The problem asks about consecutive elements.</li>
+<li>The window size is fixed.</li>
+<li>You need the maximum, minimum, or average over every window.</li>
+<li>Recomputing every window would be inefficient.</li>
+</ul>
